@@ -1,0 +1,7 @@
+{
+
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=(localhost);Initial Catalog=IsSurecleriVeBT;Persist Security Info=True;"
+  }
+}
