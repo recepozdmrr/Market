@@ -31,6 +31,7 @@ namespace Market
         {
             this.label1 = new System.Windows.Forms.Label();
             this.signUpButton = new System.Windows.Forms.Button();
+            this.LoginMain = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -57,12 +58,25 @@ namespace Market
             this.signUpButton.UseVisualStyleBackColor = false;
             this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
             // 
+            // LoginMain
+            // 
+            this.LoginMain.BackColor = System.Drawing.Color.Transparent;
+            this.LoginMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.LoginMain.Location = new System.Drawing.Point(322, 217);
+            this.LoginMain.Name = "LoginMain";
+            this.LoginMain.Size = new System.Drawing.Size(132, 56);
+            this.LoginMain.TabIndex = 2;
+            this.LoginMain.Text = "Login!";
+            this.LoginMain.UseVisualStyleBackColor = false;
+            this.LoginMain.Click += new System.EventHandler(this.loginMain_Click);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LoginMain);
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.label1);
             this.Name = "MainPage";
@@ -76,5 +90,6 @@ namespace Market
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button signUpButton;
+        private System.Windows.Forms.Button LoginMain;
     }
 }
