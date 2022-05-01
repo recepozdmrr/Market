@@ -39,7 +39,7 @@ namespace Market
             }
             connection.Close();
 
-            if (Password1.Text == Password2.Text && NameBox != null && LastName != null && Mail != null && Password1 != null && list.Count() != 1)
+            if (Password1.Text == Password2.Text && NameBox.Text != "" && LastName.Text != "" && Mail.Text != "" && Password1.Text != "" && list.Count() != 1)
             {
                 connection.Open();
                 SqlCommand add = new SqlCommand("insert into dbo.Users values(@Name,@LastName,@Mail,@Password)", connection);

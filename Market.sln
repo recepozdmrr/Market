@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32413.511
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market", "Market\Market.csproj", "{A4A396C1-DCF4-49EF-A1DA-61018DFFACDB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketEntity", "MarketEntity\MarketEntity.csproj", "{F8285328-44DF-42A3-8A06-6E3644F6F93F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketFunctions", "ClassLibrary1\MarketFunctions.csproj", "{F51705EB-E5E2-4BE3-91F4-6074778E8082}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketData", "MarketData\MarketData.csproj", "{E64EC7FD-6A6C-4EB4-BA89-41F0EF761616}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{F8285328-44DF-42A3-8A06-6E3644F6F93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8285328-44DF-42A3-8A06-6E3644F6F93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8285328-44DF-42A3-8A06-6E3644F6F93F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F51705EB-E5E2-4BE3-91F4-6074778E8082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F51705EB-E5E2-4BE3-91F4-6074778E8082}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F51705EB-E5E2-4BE3-91F4-6074778E8082}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F51705EB-E5E2-4BE3-91F4-6074778E8082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E64EC7FD-6A6C-4EB4-BA89-41F0EF761616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64EC7FD-6A6C-4EB4-BA89-41F0EF761616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64EC7FD-6A6C-4EB4-BA89-41F0EF761616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64EC7FD-6A6C-4EB4-BA89-41F0EF761616}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
