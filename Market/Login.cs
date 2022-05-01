@@ -52,11 +52,14 @@ namespace Market
                 list.Add(user);
             }
             reader.Close();
-            if(list.First().Password == EncryptData.MD5(LoginPassword.Text))
-            {
-
-            }
             connection.Close();
+            if (list.First().Password == EncryptData.MD5(LoginPassword.Text))
+            {
+                this.Close();
+                Stok Check = new Stok();
+                Check.Show();
+            }
+            
         }
     }
 }

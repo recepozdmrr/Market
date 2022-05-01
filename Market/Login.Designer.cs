@@ -69,6 +69,7 @@ namespace Market
             this.LoginPassword.Location = new System.Drawing.Point(57, 250);
             this.LoginPassword.Name = "LoginPassword";
             this.LoginPassword.Size = new System.Drawing.Size(173, 20);
+            this.LoginPassword.PasswordChar = '*';
             this.LoginPassword.TabIndex = 3;
             // 
             // label1
