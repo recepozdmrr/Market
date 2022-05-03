@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Market
 {
     public partial class Stok : Form
@@ -16,27 +15,11 @@ namespace Market
         {
             InitializeComponent();
             List();
-            listView1.View = View.Details;
-            listView1.GridLines = true;
-            listView1.FullRowSelect = true;
-
-            listView1.Columns.Add("Name", 100);
-            listView1.Columns.Add("Brand", 70);
-            listView1.Columns.Add("Qty", 50);
-            listView1.Columns.Add("Model", 70);
-            listView1.Columns.Add("SerialNumber", 150);
         }
         MarketEntities mEF = new MarketEntities();
         void List()
         {
-            var deneme = mEF.Products.ToList();
-            foreach(var item in deneme)
-            {
-                //string[] row = { StokName.Text, BranBox.Text, QtyBox.Text, ModelBox.Text, SerialBox.Text };
-                string[] row = { item.Name, item.Brand, item.Quantity.ToString(), item.Model, item.SerialNumber };
-                var satir = new ListViewItem(row);
-                listView1.Items.Add(satir);
-            }
+            gridView.DataSource = mEF.Products.ToList();
         }
         private void StokAdd_Click(object sender, EventArgs e)
         {
@@ -44,34 +27,36 @@ namespace Market
             tempProp.Name = StokName.Text;
             tempProp.Brand = BranBox.Text;
             tempProp.Quantity = Int32.Parse(QtyBox.Text);
-            tempProp.Model = SerialBox.Text;
-            mEF.Products.Add(tempProp);
-            mEF.SaveChanges();
-            string[] row = { StokName.Text, BranBox.Text, QtyBox.Text, ModelBox.Text, SerialBox.Text };
-            var satir = new ListViewItem(row);
-            listView1.Items.Add(satir);
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            tempProp.Model = ModelBox.Text;
+            tempProp.SerialNumber = SerialBox.Text;
+            if (tempProp.Name != "" && tempProp.Brand != "" && tempProp.Quantity.ToString() != "" && tempProp.Model != "" && tempProp.SerialNumber != "")
+            {
+                
+                mEF.Products.Add(tempProp);
+                mEF.SaveChanges();
+                List();
+            }
+            else
+            {
+                MessageBox.Show("Check all empty fields");
+            }
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            //var deneme = listView1.SelectedItems[0] as Products;
-        }
-
-        private void Stok_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'marketAppDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.marketAppDataSet.Products);
-
+            //var deneme = this.gridView.SelectedItem as Products;
+            if (gridView.SelectedRows.Count != 0)
+            {
+                DataGridViewRow row = this.gridView.SelectedRows[0];
+                int propId = Int32.Parse(row.Cells["idColumn"].Value.ToString());
+                mEF.Products.Remove(mEF.Products.First(p => p.Id == propId));
+                mEF.SaveChanges();
+                List();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete item.");
+            }
         }
     }
 }

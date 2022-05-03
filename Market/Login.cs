@@ -56,7 +56,7 @@ namespace Market
             if (list.First().Password == EncryptData.MD5(LoginPassword.Text))
             {
                 this.Close();
-                Stok Check = new Stok();
+                IndexPage Check = new IndexPage();
                 Check.Show();
             }
             
